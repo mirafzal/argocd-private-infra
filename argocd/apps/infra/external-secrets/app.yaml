@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-secrets
+  namespace: argocd
+spec:
+  project: infra-app-project
+  destination:
+    namespace: external-secrets
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    syncOptions:
+      - ServerSideApply=true
+  source:
+    repoURL: https://charts.external-secrets.io
+    targetRevision: 0.19.2
+    chart: external-secrets
+    helm:
+      valuesObject:
+
