@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keycloak
+  namespace: argocd
+spec:
+  project: infra-app-project
+  destination:
+    namespace: keycloak
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 25.2.0
+    chart: keycloak
+    helm:
+      valuesObject:
+        ingress:
+          enabled: true
+          hostname: keycloak.infra.devops-company.uz
+          tls: true
+          selfSigned: true
