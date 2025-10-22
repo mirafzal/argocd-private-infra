@@ -17,3 +17,5 @@ spec:
         nfs:
           server: "nfs-server.infra.devops-company.uz"
           path: "/srv/nfs_share"
+        storageClass:
+          defaultClass: true
