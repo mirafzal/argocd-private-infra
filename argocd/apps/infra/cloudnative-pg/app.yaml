@@ -8,6 +8,9 @@ spec:
   destination:
     namespace: cloudnative-pg
     server: https://kubernetes.default.svc
+  syncPolicy:
+    syncOptions:
+      - ServerSideApply=true
   source:
     repoURL: https://cloudnative-pg.io/charts/
     targetRevision: 0.26.0
