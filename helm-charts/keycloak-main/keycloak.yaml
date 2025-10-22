@@ -18,6 +18,7 @@ spec:
   http:
     httpEnabled: true
   ingress:
+    className: nginx
     tlsSecret: keycloak-tls-secret
   hostname:
     hostname: keycloak.infra.devops-company.uz
