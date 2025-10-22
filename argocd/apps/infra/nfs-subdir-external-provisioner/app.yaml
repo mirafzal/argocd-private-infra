@@ -15,5 +15,5 @@ spec:
     helm:
       valuesObject:
         nfs:
-          server: "10.0.0.107"
+          server: "nfs-server.infra.devops-company.uz"
           path: "/srv/nfs_share"
