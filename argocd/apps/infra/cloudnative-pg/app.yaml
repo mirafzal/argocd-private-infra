@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudnative-pg
+  namespace: argocd
+spec:
+  project: infra-app-project
+  destination:
+    namespace: cloudnative-pg
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://cloudnative-pg.io/charts/
+    targetRevision: 0.26.0
+    chart: cloudnative-pg
+    helm:
+      valuesObject:
