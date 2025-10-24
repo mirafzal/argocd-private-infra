@@ -65,6 +65,12 @@ spec:
         global:
           domain: argocd.infra.devops-company.uz
         configs:
+          cm:
+            oidc.config: |
+              name: ArgoCD infra client
+              issuer: https://keycloak.infra.devops-company.uz/realms/argocd-infra
+              clientID: argocd-infra
+              clientSecret: $oidc.keycloak.clientSecret
           params:
             server.insecure: true
         server:
