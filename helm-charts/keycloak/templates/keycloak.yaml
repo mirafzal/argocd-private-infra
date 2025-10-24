@@ -430,3 +430,16 @@ spec:
             successThreshold: 1
             timeoutSeconds: 10
       serviceAccountName: keycloak-operator
+      tolerations:
+        - key: "keycloak-node"
+          operator: "Exists"
+          effect: "NoSchedule"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: custom.node.type
+                    operator: In
+                    values:
+                      - keycloak
