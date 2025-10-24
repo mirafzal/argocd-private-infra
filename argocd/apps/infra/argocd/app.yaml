@@ -67,7 +67,7 @@ spec:
         configs:
           cm:
             oidc.config: |
-              name: ArgoCD infra client
+              name: Keycloak
               issuer: https://keycloak.infra.devops-company.uz/realms/argocd-infra
               clientID: argocd-infra
               clientSecret: $oidc.keycloak.clientSecret
