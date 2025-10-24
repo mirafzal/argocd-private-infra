@@ -21,7 +21,7 @@ spec:
     className: nginx
     tlsSecret: keycloak-tls-secret
   hostname:
-    hostname: keycloak.infra.devops-company.uz
+    hostname: keycloak.infra.mirafzal.uz
   proxy:
     headers: xforwarded # double check your reverse proxy sets and overwrites the X-Forwarded-* headers
   scheduling:

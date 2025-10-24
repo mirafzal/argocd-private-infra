@@ -63,12 +63,12 @@ spec:
               cpu: 10m
               memory: 50Mi
         global:
-          domain: argocd.infra.devops-company.uz
+          domain: argocd.infra.mirafzal.uz
         configs:
           cm:
             oidc.config: |
               name: Keycloak
-              issuer: https://keycloak.infra.devops-company.uz/realms/argocd-infra
+              issuer: https://keycloak.infra.mirafzal.uz/realms/argocd-infra
               clientID: argocd-infra
               clientSecret: $oidc.keycloak.clientSecret
           params:
@@ -88,5 +88,5 @@ spec:
               nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
               nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 #              cert-manager.io/cluster-issuer: letsencrypt-issuer-dns-do
-            hostname: argocd.infra.devops-company.uz
+            hostname: argocd.infra.mirafzal.uz
             tls: true
