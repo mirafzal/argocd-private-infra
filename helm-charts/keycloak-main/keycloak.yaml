@@ -24,3 +24,8 @@ spec:
     hostname: keycloak.infra.devops-company.uz
   proxy:
     headers: xforwarded # double check your reverse proxy sets and overwrites the X-Forwarded-* headers
+  scheduling:
+    tolerations:
+      - key: "keycloak-node"
+        operator: "Exists"
+        effect: "NoSchedule"
