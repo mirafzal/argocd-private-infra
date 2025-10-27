@@ -24,3 +24,4 @@ spec:
             hosts:
               core: harbor.infra.mirafzal.uz
             className: "nginx"
+        externalURL: https://harbor.infra.mirafzal.uz
