@@ -65,12 +65,24 @@ spec:
         global:
           domain: argocd.infra.mirafzal.uz
         configs:
+          rbac:
+            policy.csv: |
+              g, ArgoCDAdmins, role:admin
+              
+              p, role:developer, applications, get, business-apps/*, allow
+              p, role:developer, clusters, get, *, allow
+              p, role:developer, repositories, get, *, allow
+              p, role:developer, logs, get, business-apps/*, allow
+              p, role:developer, exec, create, business-apps/*, allow
+              g, ArgoCDDevelopers, role:developer
+
           cm:
             oidc.config: |
               name: Keycloak
               issuer: https://keycloak.infra.mirafzal.uz/realms/argocd-infra
               clientID: argocd-infra
               clientSecret: $oidc.keycloak.clientSecret
+            exec.enabled: true
           params:
             server.insecure: true
         server:
