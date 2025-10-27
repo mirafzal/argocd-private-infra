@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: harbor
+  namespace: argocd
+spec:
+  project: infra-app-project
+  destination:
+    namespace: harbor
+    server: https://kubernetes.default.svc
+  source:
+    repoURL:  https://helm.goharbor.io
+    targetRevision: 1.18.0
+    chart: harbor
+    helm:
+      valuesObject:
+        expose:
+          type: ingress
+          tls:
+            enabled: true
+            secret:
+              secretName: "harbor-tls-secret"
+          ingress:
+            hosts:
+              core: harbor.infra.mirafzal.uz
+            className: "nginx"
