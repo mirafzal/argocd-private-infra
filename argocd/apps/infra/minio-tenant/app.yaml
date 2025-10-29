@@ -14,3 +14,34 @@ spec:
     chart: tenant
     helm:
       valuesObject:
+        tenant:
+          name: minio
+          image:
+            repository: harbor.infra.mirafzal.uz/quay.io/minio/minio
+            tag: RELEASE.2025-04-22T22-12-26Z
+            pullPolicy: IfNotPresent
+        ingress:
+          api:
+            enabled: true
+            ingressClassName: "nginx"
+            labels: { }
+            annotations: { }
+            tls:
+              - hosts:
+                  - minio-api.infra.mirafzal.uz
+                secretName: minio-tls
+            host: minio-api.infra.mirafzal.uz
+            path: /
+            pathType: Prefix
+          console:
+            enabled: true
+            ingressClassName: "nginx"
+            labels: { }
+            annotations: { }
+            tls:
+              - hosts:
+                  - minio-api.infra.mirafzal.uz
+                secretName: minio-tls
+            host: minio-console.infra.mirafzal.uz
+            path: /
+            pathType: Prefix
