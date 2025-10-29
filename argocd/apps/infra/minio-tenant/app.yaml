@@ -29,7 +29,7 @@ spec:
             tls:
               - hosts:
                   - minio-api.infra.mirafzal.uz
-                secretName: minio-tls
+                secretName: infra-wildcard-cert
             host: minio-api.infra.mirafzal.uz
             path: /
             pathType: Prefix
@@ -41,7 +41,7 @@ spec:
             tls:
               - hosts:
                   - minio-api.infra.mirafzal.uz
-                secretName: minio-tls
+                secretName: infra-wildcard-cert
             host: minio-console.infra.mirafzal.uz
             path: /
             pathType: Prefix
