@@ -25,7 +25,8 @@ spec:
             enabled: true
             ingressClassName: "nginx"
             labels: { }
-            annotations: { }
+            annotations:
+              nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
             tls:
               - hosts:
                   - minio-api.infra.mirafzal.uz
@@ -37,7 +38,8 @@ spec:
             enabled: true
             ingressClassName: "nginx"
             labels: { }
-            annotations: { }
+            annotations:
+              nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
             tls:
               - hosts:
                   - minio-console.infra.mirafzal.uz
