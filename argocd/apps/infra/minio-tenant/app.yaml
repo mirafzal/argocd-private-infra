@@ -40,7 +40,7 @@ spec:
             annotations: { }
             tls:
               - hosts:
-                  - minio-api.infra.mirafzal.uz
+                  - minio-console.infra.mirafzal.uz
                 secretName: infra-wildcard-cert
             host: minio-console.infra.mirafzal.uz
             path: /
