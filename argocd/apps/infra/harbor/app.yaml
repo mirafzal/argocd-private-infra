@@ -26,3 +26,11 @@ spec:
               core: harbor.infra.mirafzal.uz
             className: "nginx"
         externalURL: https://harbor.infra.mirafzal.uz
+        persistence:
+          imageChartStorage:
+            type: s3
+            s3:
+              regionendpoint: https://minio-api.infra.mirafzal.uz
+              region: us-east-1
+              bucket: harbor-image-bucket
+              existingSecret: harbor-s3-creds
