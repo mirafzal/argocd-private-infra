@@ -27,6 +27,7 @@ spec:
             labels: { }
             annotations:
               nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+              nginx.ingress.kubernetes.io/proxy-body-size: "500m"
             tls:
               - hosts:
                   - minio-api.infra.mirafzal.uz
@@ -40,6 +41,7 @@ spec:
             labels: { }
             annotations:
               nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+              nginx.ingress.kubernetes.io/proxy-body-size: "500m"
             tls:
               - hosts:
                   - minio-console.infra.mirafzal.uz
